@@ -21,6 +21,60 @@
 		WHERE
 		 `id` = #{id}
 	</select>
+	<!-- insert는 resultType은 필요없음!! -->
+	<insert id="insertReview" parameterType="map">
+		INSERT INTO
+			`new_review`
+			(
+				`storeId`
+				, `menu`
+				, `userName`
+				, `point`
+				, `review`
+				, `createdAt`
+				, `updatedAt`
+			)
+			VALUE
+			(
+				#{storeId}
+				, #{menu}
+				, #{userName}
+				, #{point}
+				, #{review}
+				, now()
+				, now()
+			
+			)	
+			
+	</insert>
+
+	<insert id="insertReviewByObject" parameterType="com.dudtjq.spring.ex.mybatis.model.Review">
+		INSERT INTO
+			`new_review`
+			(
+				`storeId`
+				, `menu`
+				, `userName`
+				, `point`
+				, `review`
+				, `createdAt`
+				, `updatedAt`
+			)
+			VALUE
+			<!-- 파라미터가 객체 형태 일경우 -->
+			(
+				#{storeId}
+				, #{menu}
+				, #{userName}
+				, #{point}
+				, #{review}
+				, now()
+				, now()
+			)
+	
+	
+	
+	</insert>
 
 
 
