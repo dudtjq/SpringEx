@@ -27,4 +27,10 @@ public class UserBO {
 		
 	}
 	
+	public int addUserObject(User user) {
+		
+		return userDAO.insertUserByObject(user);
+		
+	}
+	
 }
