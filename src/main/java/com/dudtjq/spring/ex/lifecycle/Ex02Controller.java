@@ -12,4 +12,6 @@ public class Ex02Controller {
 		return "lifecycle/ex01";
 		
 	}
+	
+	
 }
