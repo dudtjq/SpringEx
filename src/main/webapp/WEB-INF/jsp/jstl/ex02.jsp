@@ -43,6 +43,12 @@
 		<h3>${fruit} :::: ${status.count } ${status.index} ${status.first } ${status.last } </h3>
 	
 	</c:forEach>	
+	
+	<c:forEach var="user" items="${userList}" varStatus="status">
+	
+		<h3>${user}</h3>
+	
+	</c:forEach>
 		
 </body>
 </html>

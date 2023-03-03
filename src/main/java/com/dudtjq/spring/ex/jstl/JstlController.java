@@ -1,6 +1,7 @@
 package com.dudtjq.spring.ex.jstl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,24 +36,37 @@ public class JstlController {
 		
 		List<Map<String, Object>> userList = new ArrayList<>();
 		
-		Map<String, Object> map = new HashMap<>();
+		Map<String, Object> user = new HashMap<>();
 		
-		map.put("name", "이영섭");
-		map.put("age", 28);
-		map.put("hobby", "댄스");
-		userList.add(map);
+		user.put("name", "이영섭");
+		user.put("age", 28);
+		user.put("hobby", "댄스");
+		userList.add(user);
 		
-		map = new HashMap<>();
-		map.put("email", "dudtjq0415@naver.com");
-		map.put("birthday", 19960415);
-		map.put("game", "maple");
-		userList.add(map);
+		user = new HashMap<>();
+		user.put("email", "dudtjq0415@naver.com");
+		user.put("birthday", 19960415);
+		user.put("game", "maple");
+		userList.add(user);
 		
 		model.addAttribute("fruitList", fruitList);
-		
+		model.addAttribute("userList" ,userList);
 		
 		
 		return "jstl/ex02";
+	}
+	
+	@GetMapping("/ex03")
+	public String ex03(Model model) {
+		
+		Date now = new Date();
+		
+		model.addAttribute("now", now);
+		
+		String dateString = "2023/03/03 12:11:10";
+		model.addAttribute("dateString", dateString);
+		
+		return "jstl/ex03";
 	}
 	
 }
