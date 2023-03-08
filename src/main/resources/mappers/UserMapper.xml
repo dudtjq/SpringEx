@@ -73,6 +73,22 @@
 	
 	</select>
 	
+	<select id="selectUserList" resultType="com.dudtjq.spring.ex.jsp.model.User"> 
+			SELECT 
+				`id`
+				,`name`
+				, `yyyymmdd`
+				, `email`
+				, `introduce`
+				, `createdAt`
+				, `updatedAt`
+			FROM
+				`new_user`
+		
+	
+	
+	</select>
+	
 
 
 </mapper>
