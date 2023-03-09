@@ -21,5 +21,7 @@ public interface UserDAO {
 	public int insertUserByObject(User user);
 	
 	public List<User> selectUserList();
+	// 중복체크
+	public int selectCountEmail(@Param("email") String email);
 	
 }

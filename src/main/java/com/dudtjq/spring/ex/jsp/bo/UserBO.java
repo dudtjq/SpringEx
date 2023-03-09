@@ -40,5 +40,16 @@ public class UserBO {
 		return userDAO.selectUserList();
 		
 	}
+	// 중복체크
+	public boolean isDuplicateEmail(String email) {
+		int count = userDAO.selectCountEmail(email);
+		
+		if(count == 0) {
+			// 중복되지 않았다
+			return false;
+		}else {
+			return true;
+		}
+	}
 	
 }
